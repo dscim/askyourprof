@@ -4,11 +4,11 @@ from django.http import HttpResponse
 
 
 def is_student(user):
-    return user.groups.filter(name='Student').exists()
+    return user.groups.filter(name='Students').exists()
 
 
 def is_professor(user):
-    return 'professor' in user.groups
+    return user.groups.filter(name='Professors').exists()
 
 
 @login_required
