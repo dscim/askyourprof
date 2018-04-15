@@ -13,9 +13,7 @@ def is_professor(user):
 
 @login_required
 def home(request):
-    text = 'Welcome to the home page'
-    context = {'text': text}
-    return render(request, 'melon/home.html', context)
+    return render(request, 'melon/base.html')
 
 
 @login_required
