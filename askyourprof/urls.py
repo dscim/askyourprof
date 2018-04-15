@@ -22,7 +22,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', melon_views.home, name='home'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/sign-in.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('student/', melon_views.studpage, name='studpage'),
     path('professor/', melon_views.profpage, name='profpage'),

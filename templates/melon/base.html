@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Ask your professor</title>
 
@@ -25,9 +24,6 @@
         <div class="inner">
           {% comment %} <h3 class="masthead-brand">Cover</h3> {% endcomment %}
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="{% url 'home' %}">Home</a>
-            <a class="nav-link" href="{% url 'studpage' %}">Students</a>
-            <a class="nav-link" href="{% url 'profpage' %}">Professors</a>
           </nav>
         </div>
       </header>
@@ -36,7 +32,8 @@
         <h1 class="cover-heading">Ask your professor</h1>
         <p class="lead">Keep up-to-date on the availability of your professor.</p>
         <p class="lead">
-          <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Log in</a>
+          <a href="{% url 'studpage' %}" class="btn btn-lg btn-secondary">Students</a>
+          <a href="{% url 'profpage' %}" class="btn btn-lg btn-secondary">Professors</a>
         </p>
       </main>
 

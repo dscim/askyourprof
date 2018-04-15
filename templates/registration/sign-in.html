@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sign in</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'melon/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'registration/css/signin.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+
+      {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+      {% endif %}
+
+      <img class="roundrect" src="{% static 'melon/images/pelican.jpg' %}" alt="" height="240">
+
+      <label class="sr-only" for="uname">Username</label>
+      <input class="form-control" type="text" placeholder="Username" id="username" name="username" required>
+      <label class="sr-only" for="psw">Password</label>
+      <input class="form-control" type="password" placeholder="Password" id="password" name="password" required>
+        
+      <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </body>
+</html>
