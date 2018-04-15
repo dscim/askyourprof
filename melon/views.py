@@ -25,4 +25,4 @@ def studpage(request):
 @login_required
 @user_passes_test(is_professor)
 def profpage(request):
-    return HttpResponse("This is the professor page.")
+    return render(request, 'melon/fullcalendar.html')

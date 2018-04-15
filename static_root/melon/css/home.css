@@ -1,0 +1,9 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/pelican.jpg") no-repeat;
+    text-align: center;
+    padding: 10%;
+}

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'schedule',
+    'djangobower',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -124,6 +127,22 @@ LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'home'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    ]
+
+STATICFILES_FINDERS = [
+    'djangobower.finders.BowerFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    ]
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'melon')
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)
