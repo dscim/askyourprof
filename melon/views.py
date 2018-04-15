@@ -13,7 +13,7 @@ def is_professor(user):
 
 @login_required
 def home(request):
-    return render(request, 'melon/base.html')
+    return render(request, 'melon/cover.html')
 
 
 @login_required
