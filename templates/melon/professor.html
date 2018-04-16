@@ -15,6 +15,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'melon/css/navbar-top.css' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/grid.css' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/view_prof_page.css' %}" rel="stylesheet">
   </head>
 
   <body>
@@ -45,24 +47,78 @@
     </nav>
 
     <main role="main" class="container">
-      <div class="jumbotron">
+      <div class="jumbotron" id=container>
+
         <div class="left-side">
         <h1>Gunilla Olsen</h1>
         <img src="{% static 'melon/images/IMG_2544.jpg' %}" alt="" height="315">
         <p class="lead">
           <ul>
             <li><b>Tlf:</b> 99451722</li>
-            <li><b>E-post:</b> g.olsen@ntnu.no</li>
+            <li><b>E-post:</b> gu.olsen@ntnu.no</li>
           </ul>
         </p>
       </div>
-      <div class"right-side">
+      <div class="right-side">
+        <h1>Your professor is: <div class="availability">AVAILABLE!</div></h1>
+        <p></p>
+          <p>Click her to subscribe to Gunilla Olsen. We will send you a notification on your phone when Gunilla is back at her office</p>
+          <p></p>
+            <p>Scroll down to see Gunilla's schedule</p>
+      </div>
+      </div>
+
         <!--
         1) is the professor busy
         2) calender
       -->
+
+      <div class="container">
+      <div class="centerit">
+          <div class="row">
+            <div class="col-2 a"><b>Time</b></div>
+            <div class="col-2 a"><b>Monday</b></div>
+            <div class="col-2 a"><b>Tuesday</b></div>
+            <div class="col-2 a"><b>Wednesday</b></div>
+            <div class="col-2 a"><b>Thursday</b></div>
+            <div class="col-2 a"><b>Friday</b></div>
+          </div>
+          <div class="row">
+              <div class="col-2 a"><b>8.00 - 10.00</b></div>
+              <div class="col-2 b b">Busy</div>
+              <div class="col-2 b b">Busy</div>
+              <div class="col-2 b">Available</div>
+              <div class="col-2 b">Available</div>
+              <div class="col-2 b">Available</div>
+            </div>
+          <div class="row">
+            <div class="col-2 a"><b>10.00 - 12.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+          </div>
+                  <div class="row">
+            <div class="col-2 a"><b>12.00 - 14.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+          </div>
+          <div class="row">
+            <div class="col-2 a"><b>14.00 - 16.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+          </div>
+
+        </div>
       </div>
-      </div>
+
     </main>
 
     <!-- Bootstrap core JavaScript
