@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'melon/css/navbar-top.css' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/grid.css' %}" rel="stylesheet">
   </head>
 
   <body>
@@ -46,20 +47,63 @@
     <main role="main" class="container">
       <div class="jumbotron">
         <h1>The professor page</h1>
-        <p class="lead">I wish there was a calendar here.</p>
+        <p class="lead">Toggle availability state with the button:</p>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> I am available
+            </label>
+            <label class="btn btn-danger">
+              <input type="radio" name="options" id="option2" autocomplete="off"> I am busy
+            </label>
+        </div>
       </div>
     </main>
 
-    <main role="main" class="container">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="radio" name="options" id="option1" autocomplete="off" checked> I am available
-        </label>
-        <label class="btn btn-danger">
-          <input type="radio" name="options" id="option2" autocomplete="off"> I am busy
-        </label>
+    <div class="container">
+    <div class="centerit">
+        <div class="row">
+          <div class="col-2 a">Time</div>
+          <div class="col-2 a">Monday</div>
+          <div class="col-2 a">Tuesday</div>
+          <div class="col-2 a">Wednesday</div>
+          <div class="col-2 a">Thursday</div>
+          <div class="col-2 a">Friday</div>
+        </div>
+        <div class="row">
+            <div class="col-2 a">8.00 - 10.00</div>
+            <div class="col-2 b">Busy</div>
+            <div class="col-2 b">Busy</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+          </div>
+        <div class="row">
+          <div class="col-2 a">10.00 - 12.00</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Busy</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Available</div>
+        </div>
+                <div class="row">
+          <div class="col-2 a">12.00 - 14.00</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Busy</div>
+          <div class="col-2 b">Busy</div>
+          <div class="col-2 b">Available</div>
+        </div>
+        <div class="row">
+          <div class="col-2 a">14.00 - 16.00</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Busy</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Available</div>
+          <div class="col-2 b">Available</div>
+        </div>
+
+      </div>
     </div>
-    </main>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
