@@ -1,5 +1,5 @@
 .idea/
-.dq.sqlite3
+.db.sqlite3
 
 *** Everything below here is from the .gitignore Python template. ***
 # Byte-compiled / optimized / DLL files

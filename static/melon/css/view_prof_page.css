@@ -1,0 +1,14 @@
+#container {
+  display: flex;
+  justify-content: space-between
+}
+
+.availability {
+  color: green;
+}
+
+.right-side {
+  padding-left: 70px;
+  margin-right: 20px;
+  padding-right: 20px;
+}

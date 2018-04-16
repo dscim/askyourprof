@@ -37,6 +37,7 @@
         </ul>
         <div class="searchtext">Search for professors: </div>
         <form class="form-inline mt-2 mt-md-0" id="searching" action='' method='POST'>
+          {% csrf_token %}
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id='uname'>
           <button class="btn btn-danger" type="submit">Search</button>
         </form>
@@ -46,7 +47,7 @@
     <main role="main" class="container">
       <div class="jumbotron">
         <h1>Welcome to AskYourProfessor</h1>
-        <p class="lead">In the search bar in the top left corner you can search for your professors in order to find out weather they are available, see there sceduale, and subscribe in order to get notifications to when they are back at their office.</p>
+        <p class="lead">In the search bar in the top left corner you can search for your professors in order to find out whether they are available, see there schedule, and subscribe in order to get notifications to when they are back at their office.</p>
       </div>
     </main>
 
@@ -63,7 +64,7 @@
     $(function() {
      $('#searching').submit(function(){
        var car = $('#uname').val();
-       $(this).attr('action',car + ".html");
+       $(this).attr('action','professor.html');
      });
     });
     </script>

@@ -14,6 +14,10 @@ def is_professor(user):
 def home(request):
     return render(request, 'melon/cover.html')
 
+@login_required
+def view_prof(request):
+    return render(request, 'melon/professor.html')
+
 
 @login_required
 @user_passes_test(is_student)

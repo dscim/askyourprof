@@ -1,7 +1,7 @@
   h3 {
     margin-top: 2rem;
   }
-  
+
   .row {
     margin-bottom: 0rem;
   }
@@ -20,10 +20,10 @@
   [class*="col-2 b"] {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #ffffba;
+    background-color: #d7ffba;
     border: 1px solid rgba(86, 61, 124, .2);
   }
-  
+
   [class*="col-2 b b"] {
     padding-top: 1rem;
     padding-bottom: 1rem;
