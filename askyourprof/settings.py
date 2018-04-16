@@ -144,5 +144,6 @@ BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'melon')
 BOWER_INSTALLED_APPS = (
     'jquery',
     'jquery-ui',
-    'bootstrap'
+    'bootstrap',
+    'fullcalendar',
 )
