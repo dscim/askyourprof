@@ -11,6 +11,10 @@ def is_professor(user):
     return user.groups.filter(name='Professors').exists()
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aec873372823e961211735bfe71ca0d103c8347d
 def home(request):
     return render(request, 'melon/cover.html')
 
