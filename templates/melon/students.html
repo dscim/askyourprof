@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Students</title>
 
@@ -15,12 +14,12 @@
     <link href="{% static 'melon/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'melon/css/navbar-top.cs' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/navbar-top.css' %}" rel="stylesheet">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-light mb-4" style="background-color: #ffb3ba">
-      <a class="navbar-brand" href="#">Student</a>
+      <a class="navtitle" href="{% url 'studpage' %}">Student</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,8 +35,9 @@
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>-->
         </ul>
+        <div class="searchtext">Search for professors: </div>
         <form class="form-inline mt-2 mt-md-0" id="searching" action='' method='POST'>
-          <input class="form-control mr-sm-2" type="text" placeholder="Search for professors" aria-label="Search" id='uname'>
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id='uname'>
           <button class="btn btn-danger" type="submit">Search</button>
         </form>
       </div>
@@ -47,7 +47,6 @@
       <div class="jumbotron">
         <h1>Welcome to AskYourProfessor</h1>
         <p class="lead">In the search bar in the top left corner you can search for your professors in order to find out weather they are available, see there sceduale, and subscribe in order to get notifications to when they are back at their office.</p>
-        <a class="btn btn-lg btn-danger" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
       </div>
     </main>
 
@@ -56,8 +55,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'melon/js/popper.min.js' %}"></script>
+    <script src="{% static 'melon/js/bootstrap.min.js' %}"></script>
 
     <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
     <script>
