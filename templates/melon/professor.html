@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Students</title>
+    <title>Prof view</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'melon/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -18,14 +18,15 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-md navbar-light mb-4" style="background-color: #ffb3ba">
-      <a class="navtitle" href="{% url 'studpage' %}">Student</a>
+      <a class="navtitle" href="{% url 'view_prof'}">Gunilla Olsen</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
+          <!--<li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -33,12 +34,11 @@
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
-          </li>-->
+          </li> -->
         </ul>
         <div class="searchtext">Search for professors: </div>
-        <form class="form-inline mt-2 mt-md-0" id="searching" action='' method='POST'>
-          {% csrf_token %}
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id='uname'>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-danger" type="submit">Search</button>
         </form>
       </div>
@@ -46,8 +46,22 @@
 
     <main role="main" class="container">
       <div class="jumbotron">
-        <h1>Welcome to AskYourProfessor</h1>
-        <p class="lead">In the search bar in the top left corner you can search for your professors in order to find out whether they are available, see there schedule, and subscribe in order to get notifications to when they are back at their office.</p>
+        <div class="left-side">
+        <h1>Gunilla Olsen</h1>
+        <img src="{% static 'melon/images/IMG_2544.jpg' %}" alt="" height="315">
+        <p class="lead">
+          <ul>
+            <li><b>Tlf:</b> 99451722</li>
+            <li><b>E-post:</b> g.olsen@ntnu.no</li>
+          </ul>
+        </p>
+      </div>
+      <div class"right-side">
+        <!--
+        1) is the professor busy
+        2) calender
+      -->
+      </div>
       </div>
     </main>
 
@@ -58,16 +72,5 @@
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="{% static 'melon/js/popper.min.js' %}"></script>
     <script src="{% static 'melon/js/bootstrap.min.js' %}"></script>
-
-    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
-    <script>
-    $(function() {
-     $('#searching').submit(function(){
-       var car = $('#uname').val();
-       $(this).attr('action','professor.html');
-     });
-    });
-    </script>
-
   </body>
 </html>
