@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Professor</title>
 
@@ -19,9 +18,8 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-expand-md navbar-light mb-4" style="background-color: #bae1ff">
-      <a class="navtitle" href="#">Professor</a>
+      <a class="navtitle" href="{% url 'profpage' %}">Professor</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,6 +48,17 @@
         <h1>The professor page</h1>
         <p class="lead">I wish there was a calendar here.</p>
       </div>
+    </main>
+
+    <main role="main" class="container">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> I am available
+        </label>
+        <label class="btn btn-danger">
+          <input type="radio" name="options" id="option2" autocomplete="off"> I am busy
+        </label>
+    </div>
     </main>
 
     <!-- Bootstrap core JavaScript
