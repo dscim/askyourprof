@@ -18,7 +18,7 @@ def home(request):
 @login_required
 @user_passes_test(is_student)
 def studpage(request):
-    return HttpResponse("This is the student page.")
+    return render(request, 'melon/students.html')
 
 
 @login_required
