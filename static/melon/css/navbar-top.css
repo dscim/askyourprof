@@ -1,0 +1,17 @@
+/* Show it's not fixed to the top */
+body {
+  min-height: 75rem;
+}
+
+.searchtext {
+  color: #fff;
+  font-size: 16pt;
+  margin-right: 10pt;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.navtitle {
+  color: #fff;
+  font-size: 22pt;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}

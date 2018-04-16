@@ -145,5 +145,5 @@ BOWER_INSTALLED_APPS = (
     'jquery',
     'jquery-ui',
     'bootstrap',
-    'fullcalendar'
+    'fullcalendar',
 )
