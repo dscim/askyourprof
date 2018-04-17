@@ -26,5 +26,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('student/', melon_views.studpage, name='studpage'),
     path('professor/', melon_views.profpage, name='profpage'),
-    path('student/<str:uname>', melon_views.view_prof, name='view_prof')
+    path('student/<str:uname>', melon_views.view_prof, name='view_prof'),
+    path('student/#/subscribe', melon_views.subscribe_view, name='subscribe_view'),
 ]

@@ -64,11 +64,10 @@
           <h1>Your professor is: <div class="availability">AVAILABLE!</div></h1>
         {% else %}
           <h1>Your professor is: <div class="busy">BUSY!</div></h1>
+          <a target="_blank" class="btn btn-danger" href="{% url 'subscribe_view' %}">Subscribe</a>
+          <p>Click here to subscribe to Gunilla Aas. We will send you a notification on your phone when Gunilla is back at her office</p>
         {% endif %}
-        <p></p>
-          <p>Click her to subscribe to Gunilla Aas. We will send you a notification on your phone when Gunilla is back at her office</p>
-          <p></p>
-            <p>Scroll down to see Gunilla Aas's schedule</p>
+          <p>Scroll down to see Gunilla Aas's schedule</p>
       </div>
       </div>
 
@@ -132,5 +131,16 @@
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>  
+  
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+    <script>
+    $(function() {
+     $('#subscribing').submit(function(){
+       var car = $('#uname').val();
+       $(this).attr('action', 'someurl');
+     });
+    });
+    </script>
+  
   </body>
 </html>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
-from .models import profStatus
+from .models import profStatus, Subscribe
 
 
 def is_student(user):
@@ -33,4 +33,17 @@ def studpage(request):
 @login_required
 @user_passes_test(is_professor)
 def profpage(request):
-    return render(request, 'melon/profpage.html')
+    sub = get_object_or_404(Subscribe, uname="gunilla") # hardcoded temp solution
+    context = {
+        'sub_count' : sub.subscribe,
+    }
+    return render(request, 'melon/profpage.html', context)
+
+@login_required
+@user_passes_test(is_student)
+def subscribe_view(request):
+    sub = Subscribe.objects.get(uname="gunilla") # hardcoded temp solution
+    sub.subscribe += 1
+    sub.save()
+    return HttpResponse("You have been subscribed.")
+
