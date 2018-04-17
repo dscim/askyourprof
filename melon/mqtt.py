@@ -5,7 +5,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("ttm4115/team18/")
 
 def on_message(client, userdata, msg):
-    pass
+    print(msg.payload.decode())
 
 client = mqtt.Client()
 client.on_connect = on_connect
