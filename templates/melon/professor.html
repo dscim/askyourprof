@@ -60,7 +60,11 @@
         </p>
       </div>
       <div class="right-side">
-        <h1>Your professor is: <div class="availability">AVAILABLE!</div></h1>
+        {% if status %}
+          <h1>Your professor is: <div class="availability">AVAILABLE!</div></h1>
+        {% else %}
+          <h1>Your professor is: <div class="busy">BUSY!</div></h1>
+        {% endif %}
         <p></p>
           <p>Click her to subscribe to Gunilla Aas. We will send you a notification on your phone when Gunilla is back at her office</p>
           <p></p>

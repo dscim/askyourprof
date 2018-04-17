@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
+from .models import profStatus
 
 
 def is_student(user):
@@ -15,8 +16,12 @@ def home(request):
     return render(request, 'melon/cover.html')
 
 @login_required
-def view_prof(request):
-    return render(request, 'melon/professor.html')
+def view_prof(request, uname):
+    prof = get_object_or_404(profStatus, uname=uname)
+    context = {
+        'status' : prof.getStatus,
+    }
+    return render(request, 'melon/professor.html', context)
 
 
 @login_required

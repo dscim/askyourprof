@@ -7,6 +7,10 @@
   color: green;
 }
 
+.busy {
+  color: red;
+}
+
 .right-side {
   padding-left: 70px;
   margin-right: 20px;
