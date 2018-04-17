@@ -39,14 +39,24 @@
       <div class="jumbotron">
         <h1>The professor page</h1>
         <p class="lead">You have {{sub_count}} subscribed student(s).</p>
-        <p class="lead">Toggle availability state with the button:</p>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        
+        {% if not button_status %}
+          <p class="lead">Your status is set to busy. Click the button below to change it.</p>
+          <a class="btn btn-primary" href="{% url 'available' %}">Available</a>
+        {% else %}
+          <p class="lead">Your status is set to available. Click the button below to change it.</p>
+          <a class="btn btn-danger" href="{% url 'busy' %}">Busy</a>
+        {% endif %}
+        
+{% comment %}         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-primary active">
-              <input type="radio" name="options" id="option1" autocomplete="off" checked> I am available
+              <input type="radio" name="options" id="option1" autocomplete="off" checked href="{% url 'available' %}"> I am available
             </label>
             <label class="btn btn-danger">
-              <input type="radio" name="options" id="option2" autocomplete="off"> I am busy
+              <input type="radio" name="options" id="option2" autocomplete="off" href="{% url 'busy' %}"> I am busy
             </label>
+ {% endcomment %} 
+
         </div>
       </div>
     </main>

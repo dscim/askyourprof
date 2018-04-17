@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 from .models import profStatus, Subscribe
@@ -17,7 +17,7 @@ def home(request):
 
 @login_required
 def view_prof(request, uname):
-    prof = get_object_or_404(profStatus, uname=uname)
+    prof = profStatus.objects.get(uname=uname)
     context = {
         'status' : prof.getStatus,
     }
@@ -33,17 +33,34 @@ def studpage(request):
 @login_required
 @user_passes_test(is_professor)
 def profpage(request):
-    sub = get_object_or_404(Subscribe, uname="gunilla") # hardcoded temp solution
+    sub = Subscribe.objects.get(uname="gunilla")
+    status = profStatus.objects.get(uname="gunilla")
     context = {
         'sub_count' : sub.subscribe,
+        'button_status' : status.button_status,
     }
     return render(request, 'melon/profpage.html', context)
 
 @login_required
 @user_passes_test(is_student)
 def subscribe_view(request):
-    sub = Subscribe.objects.get(uname="gunilla") # hardcoded temp solution
+    sub = Subscribe.objects.get(uname="gunilla")
     sub.subscribe += 1
     sub.save()
     return HttpResponse("You have been subscribed.")
 
+@login_required
+@user_passes_test(is_professor)
+def press_busy(request):
+    button = profStatus.objects.get(uname="gunilla")
+    button.button_status = False
+    button.save()
+    return render(request, 'melon/redirect.html')
+
+@login_required
+@user_passes_test(is_professor)
+def press_available(request):
+    button = profStatus.objects.get(uname="gunilla")
+    button.button_status = True
+    button.save()
+    return render(request, 'melon/redirect.html')

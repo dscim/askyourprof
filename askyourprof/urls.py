@@ -28,4 +28,6 @@ urlpatterns = [
     path('professor/', melon_views.profpage, name='profpage'),
     path('student/<str:uname>', melon_views.view_prof, name='view_prof'),
     path('student/#/subscribe', melon_views.subscribe_view, name='subscribe_view'),
+    path('professor/busy', melon_views.press_busy, name="busy"),
+    path('professor/available', melon_views.press_available, name="available"),
 ]
