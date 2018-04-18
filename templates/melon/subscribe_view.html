@@ -1,0 +1,146 @@
+{% load i18n static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gunilla</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'melon/css/navbar-top.css' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/grid.css' %}" rel="stylesheet">
+    <link href="{% static 'melon/css/view_prof_page.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-light mb-4" style="background-color: #ffb3ba">
+      <a class="navtitle" href="{% url 'view_prof'}">Gunilla Aas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li> -->
+        </ul>
+        <div class="searchtext">Search for professors: </div>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron" id=container>
+
+        <div class="left-side">
+        <h1>Gunilla Aas</h1>
+        <img src="{% static 'melon/images/IMG_2544.jpg' %}" alt="" height="315">
+        <p class="lead">
+          <ul>
+            <li><b>Tlf:</b> 99451722</li>
+            <li><b>E-post:</b> gu.aas@ntnu.no</li>
+          </ul>
+        </p>
+      </div>
+      <div class="right-side">
+        {% if status %}
+          <h1>Your professor is: <div class="availability">AVAILABLE!</div></h1>
+        {% else %}
+          <h1>Your professor is: <div class="busy">BUSY!</div></h1>
+<!--           <a target="_blank" class="btn btn-danger" href="{% url 'subscribe_view' %}">Subscribe</a>
+ -->          <p>You are now subscribed. We will send you as notification when Gunilla is back at her office.</p>
+        {% endif %}
+          <p>Scroll down to see Gunilla Aas's schedule</p>
+      </div>
+      </div>
+
+        <!--
+        1) is the professor busy
+        2) calender
+      -->
+
+      <div class="container">
+      <div class="centerit">
+          <div class="row">
+            <div class="col-2 a"><b>Time</b></div>
+            <div class="col-2 a"><b>Monday</b></div>
+            <div class="col-2 a"><b>Tuesday</b></div>
+            <div class="col-2 a"><b>Wednesday</b></div>
+            <div class="col-2 a"><b>Thursday</b></div>
+            <div class="col-2 a"><b>Friday</b></div>
+          </div>
+          <div class="row">
+              <div class="col-2 a"><b>8.00 - 10.00</b></div>
+              <div class="col-2 b b">Busy</div>
+              <div class="col-2 b b">Busy</div>
+              <div class="col-2 b">Available</div>
+              <div class="col-2 b">Available</div>
+              <div class="col-2 b">Available</div>
+            </div>
+          <div class="row">
+            <div class="col-2 a"><b>10.00 - 12.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+          </div>
+                  <div class="row">
+            <div class="col-2 a"><b>12.00 - 14.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+          </div>
+          <div class="row">
+            <div class="col-2 a"><b>14.00 - 16.00</b></div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b b">Busy</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+            <div class="col-2 b">Available</div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>  
+  
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+    <script>
+    $(function() {
+     $('#subscribing').submit(function(){
+       var car = $('#uname').val();
+       $(this).attr('action', 'someurl');
+     });
+    });
+    </script>
+  
+  </body>
+</html>

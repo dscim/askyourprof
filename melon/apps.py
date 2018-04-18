@@ -5,7 +5,7 @@ import json
 
 class MelonConfig(AppConfig):
     name = 'melon'
-
+    
     def ready(self):
         from .models import profStatus
 
